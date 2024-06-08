@@ -1,5 +1,16 @@
-void ft_print_reverse_alphabet(void) {
-        char alpha[] = "zyxwvutsrqponmlkjihgfedcba";
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkudmani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/08 13:38:31 by mkudmani          #+#    #+#             */
+/*   Updated: 2024/06/08 13:38:32 by mkudmani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-        write(1, alpha, 26);
+void	ft_print_reverse_alphabet(void)
+{
+	write(1, "zyxwvutsrqponmlkjihgfedcba", 26);
 }

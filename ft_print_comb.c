@@ -1,27 +1,57 @@
-void ft_print_comb(void);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkudmani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/08 13:37:53 by mkudmani          #+#    #+#             */
+/*   Updated: 2024/06/08 13:38:01 by mkudmani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_print_comb(void) {
-    char comb1 = '0';
-    char comb2;
-    char comb3;
+#include <unistd.h>
 
-        while (comb1 <= '7') {
-                comb2 = comb1 + 1;
-    while(comb2 <= '8') {
-      comb3 = comb2 + 1;
-                  while(comb3 <= '9') {
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
-                  write(1, &comb1, 1);
-                  write(1, &comb2, 1);
-                  write(1, &comb3, 1);
+void	body(char char1, char char2, char char3)
+{
+	ft_putchar(char1 + '0');
+	ft_putchar(char2 + '0');
+	ft_putchar(char3 + '0');
+}
 
-                        if (comb1 != '7' || comb2 != '8' || comb3 != '9') {
-        write(1, ", ", 2);
-      }
-                        comb3++;
-                  }
-                comb2++;
-          }
-        comb1++;
-        }
+int	main(void)
+{
+	int num1;
+	int num2;
+	int num3;
+
+	num1 = 0;
+	while (num1 <= 7)
+	{
+		num2 = num1 + 1;
+		while (num2 <= 8)
+		{
+			num3 = num2 + 1;
+			while (num3 <= 9)
+			{
+				body(num1, num2, num3);
+				if (num1 == 7 && num2 == 8 && num3 == 9)
+				{
+					return (0);
+				}
+				ft_putchar(',');
+				ft_putchar(' ');
+				num3++;
+			}
+			num2++;
+		}
+		num1++;
+	}
+
+	return (0);
 }
